@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
     texlive-formats-extra
 
 RUN R -e "install.packages(c('leaflet','rmarkdown','git2r','DT', 'Cairo','colourpicker','shinyBS','shinydashboard','shinyjs','shinythemes','svglite','htmltools','base64enc','ggplot2','ggthemes'),repos='https://cran.rstudio.com/')"
-
+RUN R -e  "devtools::install_github('rstudio/DT')"
 EXPOSE 3838
 WORKDIR /srv/shiny-server
-CMD ["/usr/bin/Rscript", "start.R"]
