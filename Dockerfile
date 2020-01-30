@@ -1,4 +1,4 @@
-FROM r-base:latest
+FROM r-base:3.6.1
 
 MAINTAINER Andreas Mueller "andreas@kwiqly.com" 
 RUN apt-get update -y && apt-get install -y curl\
