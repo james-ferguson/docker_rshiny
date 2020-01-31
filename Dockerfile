@@ -1,4 +1,4 @@
-FROM r-base:3.6.1
+FROM r-base:3.6.2
 
 MAINTAINER Andreas Mueller "andreas@kwiqly.com" 
 RUN apt-get update -y && apt-get install -y curl\
@@ -13,23 +13,21 @@ RUN apt-get update -y && apt-get install -y curl\
 RUN mkdir -p /var/opt/kwiqly
 RUN npm install -g orca
 RUN R -e  ' install.packages("devtools");\
+install.packages("fANCOVA");\
+install.packages("plotly");\
+install.packages("curl");\
 library(devtools);\
-devtools::install_github("ropensci/plotly");\
-install_version("safer");\
-install_version("curl");\
-install_version("shiny");\
-install_version("shinyjs");\
-install_version("shinythemes", upgrade="never");\
-install_version("feather");\
-install_version("fANCOVA");\
-install_version("shinyhelper");\
-install_version("NbClust");\
-install_version("plotly");\
-install_version("curl");\
-install_version("jsonlite");\
-install_version("DT");\
-install_version("dbplyr");\
-install_version("haven");\
-install_version("knitr");\
-install_version("tidyverse");\
-install_version("magrittr");'
+install_version("safer", version = "0.2.1");\
+install_version("shiny", version = "1.4.0");\
+install_version("shinyjs", version = "1.0");\
+install_version("shinythemes", version = "1.1.2");\
+install_version("feather", version = "0.3.5");\
+install_version("shinyhelper", version = "0.3.2");\
+install_version("NbClust", version = "3.0");\
+install_version("jsonlite", version = "1.6");\
+install_version("DT", version = "0.11");\
+install_version("dbplyr", version = "1.4.2");\
+install_version("haven", version = "2.2.0");\
+install_version("knitr", version = "1.26");\
+install_version("tidyverse", version = "1.3.0");\
+install_version("magrittr", version = "1.5");'
