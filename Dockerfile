@@ -1,6 +1,6 @@
 FROM r-base:3.6.2
 
-MAINTAINER Andreas Mueller "andreas@kwiqly.com" 
+MAINTAINER James Ferguson "james@kwiqly.com" 
 RUN apt-get update -y && apt-get install -y curl\
     libssl-dev libcurl4-gnutls-dev  r-cran-rpostgresql libpq-dev \
     libcurl4-gnutls-dev \
